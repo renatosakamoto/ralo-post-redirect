@@ -117,6 +117,7 @@ class RaloPostRedirect{
     }
 
     function postLink( $url, $post, $leavename ) {
+        if(!$post->postname) return $url;
         if(!$leavename){
             $redirect = get_post_meta( $post->ID, RALO_REDIRECT_METAKEY, true );
 
